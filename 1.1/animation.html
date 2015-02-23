@@ -1,0 +1,37 @@
+<html>
+    <head>
+    	<title>Animation JavaScript</title>
+    	<style type="text/css">
+    	#block {
+                position: absolute;
+                background-color: red;
+                width: 100px;
+                height: 100px;
+                }
+        </style>
+    </head>
+    <body>
+        <div id="block"></div>
+        <script type="text/javascript">
+        	var obj = document.getElementById("block");
+			var i = 0;
+			function moveForward() {
+                if (i <= 500) {
+                    obj.style.left = i;
+                    i++;
+                } else {
+                    setInterval(moveBack, 1);
+                }
+            }
+            function moveBack() {
+                if (i !== 0) {
+                    obj.style.left = i;
+                    i--;
+                } else {
+                    clearInterval(timer);
+                }
+            }
+			setInterval(moveForward, 1);
+            </script>
+    </body>
+</html>
